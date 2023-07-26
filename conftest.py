@@ -2,11 +2,13 @@ from selene.support.shared import browser
 from selenium import webdriver
 import pytest
 
-options = webdriver.ChromeOptions()
+options = webdriver.FirefoxOptions()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function', autouse=True)
 def browser_opt():
-    options.add_argument("--window-size=1920,1080")
+    options.add_argument("-width=1920")
+    options.add_argument("-height=1080")
+    browser.config.driver_name = 'firefox'
     browser.config.driver_options = options
-    browser.open('https://google.com/ncr')
+    browser.config.base_url = 'https://google.com/ncr'
