@@ -1,16 +1,5 @@
 from selene.support.shared import browser
 from selene import be, have
-import pytest
-from selenium import webdriver
-
-options = webdriver.ChromeOptions()
-
-
-@pytest.fixture
-def browser_opt():
-    options.add_argument("--window-size=1920,1080")
-    browser.config.driver_options = options
-    browser.open('https://google.com/ncr')
 
 
 def test_search_result(browser_opt):
