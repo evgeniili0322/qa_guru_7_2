@@ -3,7 +3,7 @@ from selene import be, have
 
 
 def test_search_result():
-    browser.open()
+    browser.open('')
     browser.element('[name=q]').should(be.blank).type('yashaka/selene').press_enter()
     browser.element('#search"').should(have.text('yashaka/selene: User-oriented Web UI browser tests in'))
 
