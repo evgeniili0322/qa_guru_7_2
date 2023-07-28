@@ -14,3 +14,5 @@ def test_blank_search_result():
     browser.element('#search').should(be.hidden)
     browser.element('.card-section [aria-level="3"]').should(
         have.text('Your search - 0x000001DB9AA6C690 - did not match any documents.'))
+
+#Checking idea
